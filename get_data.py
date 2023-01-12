@@ -1,8 +1,11 @@
 import csv
 import re
+import elasticsearch
 
 filepath = '/home/work/PycharmProjects/test_candidate/test_data/test.csv'
 
+# 5
+es = elasticsearch.Elasticsearch('http://localhost:9200')
 
 with open(filepath) as csv_file, open(filepath) as csv_file_2, open(filepath) as header_csv:
     header_reader = csv.DictReader(header_csv)
@@ -47,6 +50,8 @@ with open(filepath) as csv_file, open(filepath) as csv_file_2, open(filepath) as
                 data_dict[key] = value
             print(data_dict, '\n')
 
+            # 5
+            es.index(index='example', document=data_dict)
 
 
 
