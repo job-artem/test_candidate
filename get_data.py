@@ -14,8 +14,11 @@ with open(filepath) as csv_file, open(filepath) as csv_file_2, open(filepath) as
             header = list(row.keys())
             break
     print(header)
-    # reader = csv.reader(csv_file_2, delimiter=' ', quotechar='"', skipinitialspace=True)
 
+
+
+    # reader = csv.reader(csv_file_2, delimiter=' ', quotechar='"', skipinitialspace=True)
+    #
     # data_reader = csv.DictReader(csv_file, fieldnames=header, delimiter=',')
     #
     # for num, row in enumerate(data_reader):
@@ -43,8 +46,9 @@ with open(filepath) as csv_file, open(filepath) as csv_file_2, open(filepath) as
                 cleaned_el = re.sub(r'\"', '', el)
                 cleaned_arr.append(cleaned_el)
             print(cleaned_arr)
-            data_dict = {}
 
+            data_dict = {}
+    #
             # 4
             for key, value in zip(header, cleaned_arr):
                 data_dict[key] = value

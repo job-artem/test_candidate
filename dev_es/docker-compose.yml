@@ -10,6 +10,10 @@ services:
       - type: bind
         source: ./es_data
         target: /usr/share/elasticsearch/data
+
+      - type: bind
+        source: ./elasticsearch.yml
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - target: 9200
         published: 9200

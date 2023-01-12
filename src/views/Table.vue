@@ -77,7 +77,7 @@ export default {
     bulk_data: []
   }),
   mounted () {
-    axios.post('http://localhost:9200/armffu_widget_user_csv/_search/')
+    axios.post('http://localhost:9200/example/_search/')
       .then(function (response) {
         this.bulk_data = response.data.hits.hits
         console.log(this.bulk_data)
