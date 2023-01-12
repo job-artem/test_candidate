@@ -4,14 +4,23 @@
       <template v-slot:default>
         <thead>
         <tr>
-          <th class="text-left">Name</th>
-          <th class="text-left">Address</th>
+          <th class="text-left">customers_id</th>
+          <th class="text-left">customers_firstname</th>
+          <th class="text-left">customers_secondname</th>
+          <th class="text-left">customers_lastname</th>
+          <th class="text-left">customers_email_address</th>
+          <th class="text-left">login_time</th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="row in bulk_data" :key="row._id">
-          <td>{{ row._source.name }}</td>
-          <td>{{ row._source.address }}</td>
+<!--          <td>{{ row["_source"] }}</td>-->
+          <td>{{ row["_source"]["customers_id"] }}</td>
+          <td>{{ row["_source"]["customers_firstname"] }}</td>
+          <td>{{ row["_source"]["customers_secondname"] }}</td>
+          <td>{{ row["_source"]["customers_lastname"] }}</td>
+          <td>{{ row["_source"]["customers_email_address"] }}</td>
+          <td>{{ row["_source"]["login_time"] }}</td>
 <!--          <td>{{ row.calories }}</td>-->
         </tr>
         </tbody>
